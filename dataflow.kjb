@@ -87,11 +87,11 @@
       <yloc>176</yloc>
       </entry>
     <entry>
-      <name>runCrawl.sh</name>
+      <name>runCrawlCode</name>
       <description/>
       <type>SHELL</type>
       <filename/>
-      <work_directory>C&#x3a;&#x5c;Users&#x5c;ChinhNV&#x5c;Documents&#x5c;Github&#x5c;2023-hn-NguyenVanChinh-PentahoCrawlData&#x5c;crawlData&#x5c;</work_directory>
+      <work_directory>&#x24;&#x7b;Internal.Job.Filename.Directory&#x7d;&#x5c;crawlData&#x5c;</work_directory>
       <arg_from_previous>N</arg_from_previous>
       <exec_per_row>N</exec_per_row>
       <set_logfile>N</set_logfile>
@@ -113,7 +113,7 @@
   <hops>
     <hop>
       <from>START</from>
-      <to>runCrawl.sh</to>
+      <to>runCrawlCode</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
@@ -121,7 +121,7 @@
       <unconditional>Y</unconditional>
     </hop>
     <hop>
-      <from>runCrawl.sh</from>
+      <from>runCrawlCode</from>
       <to>ETL</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
