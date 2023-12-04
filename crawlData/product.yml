@@ -1,0 +1,17 @@
+product:
+    css: div.product-card
+    multiple: true
+    type: Text
+    children:
+        productName:
+            css: div.product-title-text
+            type: Text
+        productPrice:
+            css: div.product-price span.price-number
+            type: Text
+        productUnit:
+            css: div.product-price span.price-unit
+            type: Text
+        productMod:
+            css: span.product-moq-number
+            type: Text
