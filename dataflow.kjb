@@ -50,8 +50,8 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>112</xloc>
-      <yloc>176</yloc>
+      <xloc>96</xloc>
+      <yloc>208</yloc>
       </entry>
     <entry>
       <name>ETL</name>
@@ -83,8 +83,8 @@
       </parameters>      <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>416</xloc>
-      <yloc>176</yloc>
+      <xloc>336</xloc>
+      <yloc>208</yloc>
       </entry>
     <entry>
       <name>runCrawlCode</name>
@@ -106,8 +106,42 @@
       <parallel>N</parallel>
       <draw>Y</draw>
       <nr>0</nr>
-      <xloc>256</xloc>
-      <yloc>176</yloc>
+      <xloc>208</xloc>
+      <yloc>208</yloc>
+      </entry>
+    <entry>
+      <name>log success</name>
+      <description/>
+      <type>WRITE_TO_LOG</type>
+      <logmessage>load data OK</logmessage>
+      <loglevel>Detailed</loglevel>
+      <logsubject>RESULT ETL</logsubject>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>432</xloc>
+      <yloc>208</yloc>
+      </entry>
+    <entry>
+      <name>Abort job</name>
+      <description/>
+      <type>ABORT</type>
+      <message/>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>448</xloc>
+      <yloc>96</yloc>
+      </entry>
+    <entry>
+      <name>Success</name>
+      <description/>
+      <type>SUCCESS</type>
+      <parallel>N</parallel>
+      <draw>Y</draw>
+      <nr>0</nr>
+      <xloc>512</xloc>
+      <yloc>208</yloc>
       </entry>
   </entries>
   <hops>
@@ -123,6 +157,33 @@
     <hop>
       <from>runCrawlCode</from>
       <to>ETL</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL</from>
+      <to>log success</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>Y</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>ETL</from>
+      <to>Abort job</to>
+      <from_nr>0</from_nr>
+      <to_nr>0</to_nr>
+      <enabled>Y</enabled>
+      <evaluation>N</evaluation>
+      <unconditional>N</unconditional>
+    </hop>
+    <hop>
+      <from>log success</from>
+      <to>Success</to>
       <from_nr>0</from_nr>
       <to_nr>0</to_nr>
       <enabled>Y</enabled>
